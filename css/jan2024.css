@@ -1,0 +1,101 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url(OpenSans-ExtraBold.ttf);
+}
+html,body{
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 23px;
+	font-weight: 100;
+}
+body{
+	background: #fff;
+}
+
+#container{
+	position: relative;
+	overflow: hidden;
+	width:640px;
+	height:640px;
+	border:1px solid black;
+}
+#header{
+	position: relative;
+	background: #fff;
+	text-align: center;
+	width:640px;
+	height:160px;
+	border-bottom:1px solid black;
+}
+#header #money_guy{
+	background: #bada55;
+	width: 90px;
+ 	height: 90px;
+	position: absolute;
+	top:10px;
+	left:10px;
+}
+#header #small_text{
+	text-align: left;
+	font-size: 20px;
+	line-height: 1.5em;
+	width: 510px;
+	position: absolute;
+	right: 20px;
+	top: 25px;
+}
+#header #big_text{
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	bottom: 10px;
+	width: 640px;
+}
+
+#thanks{
+	width: 640px;
+	margin: 0px auto 50px auto;
+	text-align: center;
+	height: 480px;
+	position: relative;
+	overflow: hidden;
+}
+#peeps{
+	font-size: 20px;
+	column-count: 3;
+	column-gap: 0px;
+	padding-top:480px;
+	margin:0;
+	position: relative;
+	left:20px;
+	width: 600px;
+}
+#peeps p{
+	margin: 0.8em 0;
+	line-height: 1em;
+}
+.credit_star{
+	height: 0;
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+.heart{ position:absolute; z-index:999; font-size:30px; margin:4px 7px; }
+.heart::before{ content:'💖'; }
+.heart[lean=left]{ transform:rotate(-10deg); }
+.heart[lean=right]{ transform:rotate(10deg); }
+
+a{
+	/*font-weight: bold;*/
+	color:#ff4040;
+	transition: color 0.1s;
+}
+a:hover{
+	color:#ff8080;
+}
+b{
+	font-weight: bolder;
+}
+strong{
+	font-weight: bold;
+}
