@@ -32,7 +32,7 @@ setTimeout(()=>{
     let anim = ()=>{
 
         // Scroll
-        //peepsContainer.style.top = (-1*peepsY)+"px";
+        peepsContainer.style.top = (-1*peepsY)+"px";
         peepsY += 2;
         if(peepsY>=peepsHeight) peepsY=0; // return!
 
