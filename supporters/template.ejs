@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/jan2024.css">
+	<script src='../js/jan2024.js'></script>
+</head>
+<body>
+    <div id="container">
+    	<div id="header">
+            <div id="money_guy"></div>
+            <div id="small_text">
+				Support me on
+                <strong><a target="_blank" href="https://www.patreon.com/ncase">Patreon!</a></strong> (or
+                <a target="_blank" href="https://ko-fi.com/nickycase">Ko-Fi</a>
+                or
+                <a target="_blank" href="https://www.paypal.me/nickycase">Paypal</a>)
+                Rewards: early access, voting on projects, name in credits, my &lt;3
+            </div>
+    		<div id="big_text">
+    			thank you to my supporters! (<%= month %> <%= year %>⤵)
+    		</div>
+    	</div>
+    	<div id="thanks">
+			<div id="peeps">
+
+<%# Rotate through LCH colors, only change hue... %>
+<%_ let hue = 19; _%>
+<%# For each supporter ... %>
+<%_ supporters.forEach(supporter=>{ _%>
+	<%_ if(supporter.tier==1){ _%>
+		<%# "Just" print name %>
+		<p><%= supporter.name %></p>
+	<%_ }else if(supporter.tier==2){ _%>
+		<%# In bolder: star with name %>
+		<p><b><span class="credit_star">☆</span> <%= supporter.name %></b></p>
+	<%_ }else if(supporter.tier>=3){ _%>
+		<%_ let chars = []; _%>
+		<%_ chars.push('☆',' '); _%>
+		<%_ chars = chars.concat( supporter.name.split('') ) _%>
+		<p><b>
+		<%_ chars.forEach((char,i)=>{ _%>
+			<%_ let style = `color:lch(66% 100 ${hue})`; _%>
+			<%_ hue = (hue+30)%360; _%>
+			<%_ if(i==0){ _%><span class="credit_star" style="<%= style %>">☆</span><%_ }else{ _%><span style="<%= style %>"><%= char %></span><%_ } _%>
+		<%_ }); _%>
+		</b></p>
+	<%_ } _%>
+<%_ }); _%>
+
+			</div>
+        </div>
+	</div>
+</body>
+</html>
